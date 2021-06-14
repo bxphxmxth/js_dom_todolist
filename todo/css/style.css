@@ -13,7 +13,7 @@ body{
 
 .todo-input{
     font-family: Mate SC;
-    font-weight: bolder;
+    
 }
 .todo-button{
     margin-top: 2%;
@@ -50,6 +50,8 @@ body{
     min-width: max-content;
     list-style: none;
     flex: 1;
+    font-family: Mate SC ;
+    font-weight: 500;
     
 }
 
@@ -86,3 +88,4 @@ body{
     height: 30px;
     cursor: pointer;
 }
+

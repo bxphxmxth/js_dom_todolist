@@ -58,8 +58,35 @@ toDoButton.addEventListener("click", (e) =>{
     // Pour clear la valeur de l'input 
     toDoInput.value = ""
 
-
-    
-    
-
 })
+// Meme code pour la touche "enter"
+document.body.addEventListener("keyup", (event) =>{
+    let name = event.key;
+  if (name === 'Enter') {
+     //Console log 2 see if ca fonctionne
+    // console.log(e.target);
+    // Ajouter div à chaque clic
+    let todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    document.body.appendChild(todoDiv)
+    // Pour créer les LI à chaque clic
+    let newTodo = document.createElement("li");
+    newTodo.innerText = toDoInput.value
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo)
+    console.log(newTodo);
+    //Check bouton
+    let completedButton = document.createElement("button");
+    completedButton.innerText = "V";
+    completedButton.classList.add("complete-btn");
+    todoDiv.appendChild(completedButton)
+    // Delete bouton
+    let trashButton = document.createElement("button");
+    trashButton.innerText = `D`;
+    trashButton.classList.add("trash-btn");
+    todoDiv.appendChild(trashButton)
+    // Pour clear la valeur de l'input 
+    toDoInput.value = ""
+
+  }
+}, false);
