@@ -22,3 +22,17 @@ body{
     cursor: pointer;
 }
 
+
+.todo{
+    display: flex;
+    align-items: center;
+    /* border: red solid; */
+    font-size: 30px;
+    font-family: Mate SC;
+}
+
+.complete-btn{
+    width: 30px;
+    height: 30px;
+
+}

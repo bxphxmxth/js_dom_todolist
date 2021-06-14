@@ -29,3 +29,29 @@ let toDoButton = document.querySelector(".todo-button");
 let toDoList = document.querySelector(".todo-list");
 
 
+//Event Listeners
+
+
+toDoButton.addEventListener("click", (e) =>{
+    //Console log 2 see if ca fonctionne
+    // console.log(e.target);
+    // Ajouter div à chaque clic
+    let todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    document.body.appendChild(todoDiv)
+    // Pour créer les LI à chaque clic
+    let newTodo = document.createElement("li");
+    newTodo.innerText = toDoInput.value
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo)
+    console.log(newTodo);
+    //Check bouton
+    let completedButton = document.createElement("button");
+    completedButton.innerHtml = `<i class="fas fa-check"></i>`;
+    completedButton.classList.add("complete-btn");
+    todoDiv.appendChild(completedButton)
+
+    
+    
+
+})
