@@ -63,6 +63,8 @@ body{
     display: flex;
     justify-content: space-between;
     margin-left: 25%;
+    transition: all 0.5s ease;
+    
 
 }
 
@@ -89,3 +91,33 @@ body{
     cursor: pointer;
 }
 
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall{
+    transform: translateY(8 rem) rotateZ(20 deg);
+    opacity: 0;
+}
+
+
+select{
+    color: rgb(148, 116, 116);
+    margin-top: 20px;
+    font-family: Mate SC;
+    cursor: pointer;
+
+}
+
+.select::after{
+    content: "\25BC";
+    position:absolute;
+    background-color: orange;
+    top: 0;
+    right: 0%;
+}

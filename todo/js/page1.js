@@ -90,3 +90,69 @@ document.body.addEventListener("keyup", (event) =>{
 
   }
 }, false);
+
+// Supprimer TODO
+
+document.body.addEventListener("click",(e) =>{
+
+    let item = e.target;
+    if(item.classList[0] === "trash-btn"){
+        let todo = item.parentElement;
+
+        // Animation
+        
+        todo.classList.add("fall");
+        todo.addEventListener("transitionend", ()=>{
+            
+            todo.remove()
+        })
+       
+    }
+})
+    
+
+//TODO done
+
+document.body.addEventListener("click",(e) =>{
+
+    let item = e.target;
+    if(item.classList[0] === "complete-btn"){
+        let todo = item.parentElement;
+        console.log(todo);
+        todo.classList.toggle("completed")
+        
+    }
+})
+    
+
+
+// Creation select 
+let divSelect = document.createElement("div");
+let select = document.createElement("select");
+select.setAttribute("name","todos");
+select.setAttribute("class", "filter-todo")
+console.log(select);
+//all
+let option1 = document.createElement("option");
+option1.setAttribute('value',"all")
+option1.innerText ="All";
+//Commplet
+let option2 = document.createElement("option");
+option2.setAttribute('value',"completed")
+option2.innerText ="Completed";
+//uncompleted
+let option3 = document.createElement("option");
+option3.setAttribute('value',"uncompleted")
+option3.innerText ="Uncompleted";
+
+
+
+
+divSelect.appendChild(select);
+select.appendChild(option1);
+select.appendChild(option2);
+select.appendChild(option3);
+console.log(select);
+console.log(divSelect);
+
+document.body.appendChild(divSelect)
