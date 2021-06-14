@@ -142,14 +142,18 @@ document.body.addEventListener("click", (e)=>{
 })
 
 //TODO done
+let todo;
+
 
 document.body.addEventListener("click",(e) =>{
 
     let item = e.target;
     if(item.classList[0] === "complete-btn"){
-        let todo = item.parentElement;
+        todo = item.parentElement;
+        
         console.log(todo);
-        todo.classList.toggle("completed")
+        todo.classList.toggle("completed");
+        todo.classList.toggle("test");
 
         
     }
@@ -168,6 +172,7 @@ let btnAll = document.createElement("button");
 btnAll.innerText ="All";
 div3btn.appendChild(btnAll)
 
+
 let btnDone = document.createElement("button");
 btnDone.innerText ="Done";
 div3btn.appendChild(btnDone)
@@ -176,16 +181,70 @@ let btnToDo = document.createElement("button");
 btnToDo.innerText ="To Do";
 div3btn.appendChild(btnToDo)
 
+// fonction à faire TO DO
 
 let tabComplete;
+let tabTest;
 
- btnAll.addEventListener("click", () =>{
+btnToDo.addEventListener("click", () =>{
         tabComplete = Array.from(document.getElementsByClassName("completed"));
-        
+        tabComplete.forEach(element => {
+            element.style.display = "flex"
+        });
+        tabTest = Array.from(document.getElementsByClassName("test"));
+        tabTest.forEach(element => {
+            element.style.display = "none"
+        });
         
  })
 
+// fonction all 
 
+btnAll.addEventListener("click", () =>{
+    tabComplete = Array.from(document.getElementsByClassName("completed"));
+    tabComplete.forEach(element => {
+        element.style.display = "flex"
+    });
+    tabTest = Array.from(document.getElementsByClassName("test"));
+    tabTest.forEach(element => {
+        element.style.display = "flex"
+    });
+    
+})
+
+
+// fonction done  A REFAIRE
+
+btnDone.addEventListener("click", () =>{
+    tabComplete = Array.from(document.getElementsByClassName("completed"));
+    tabComplete.forEach(element => {
+        element.style.display = "none"
+    });
+    tabTest = Array.from(document.getElementsByClassName("test"));
+    tabTest.forEach(element => {
+        element.style.display = "flex"
+    });
+    
+})
+
+let btnClear = document.createElement("button");
+btnClear.innerText = "Clear";
+btnClear.setAttribute("class","clear1");
+document.body.appendChild(btnClear);
+console.log(btnClear);
+
+btnClear.addEventListener("click", () =>{
+
+    tabComplete.forEach(element => {
+        element.remove();
+    });
+
+    let tabtoDo = Array.from(document.getElementsByClassName("todo"));
+    tabtoDo.forEach(element => {
+        element.remove();
+        
+    });
+});
 
 
 // Creation select 
@@ -222,9 +281,6 @@ let tabComplete;
 // document.body.appendChild(divSelect)
 
 
-// btn clear
-
-// let btnClear = document.createElement("button");
 
 
 // let renameButton = document.createElement("button");
@@ -292,4 +348,5 @@ let tabComplete;
         
 //     }
 // })
-    
+ 
+
