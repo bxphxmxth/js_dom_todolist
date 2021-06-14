@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: mediumpurple;
+    background-color: rgb(175, 160, 204);
     font-family: Mate SC;
     min-height: 100vh;
     text-align: center;
@@ -13,6 +13,7 @@ body{
 
 .todo-input{
     font-family: Mate SC;
+    background-color: rgb(233, 215, 181);
     
 }
 .todo-button{
@@ -22,7 +23,10 @@ body{
     cursor: pointer;
 }
 
-
+.todo-item{
+    border: black solid 1px;
+    border-radius: 5px;
+}
 /* .todo{
     display: flex;
     align-items: center;
@@ -57,7 +61,8 @@ body{
 
 .todo{
     margin: 3%;
-    background: rgb(255, 255, 255);
+    background-color: rgb(218, 179, 109);
+    
     width: 50%;
     height: 30px;
     display: flex;
@@ -139,8 +144,15 @@ select:hover{
     margin-top: 3%;
     justify-content: space-between;
     
+} 
 
-/* .clear1{
-    border: red;
+.button1{
+    color: black;
+    background-color: rgb(218, 179, 109);
+    padding: 5px;
+    font-family: Mate SC;
+    cursor: pointer;
+
     
-} */
+}
+

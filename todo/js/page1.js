@@ -1,5 +1,5 @@
 let title = document.createElement("h1");
-let titleText = document.createTextNode("My Todo-List");
+let titleText = document.createTextNode("𝔐𝔢𝔰 𝔮𝔲ê𝔱𝔢𝔰 ");
 title.appendChild(titleText)
 
 document.body.appendChild(title)
@@ -133,13 +133,14 @@ document.body.addEventListener("click", (e)=>{
     console.log(e.target);
     if(e.target.innerText === "R"){
 
-       let modif = prompt("Modifie le contenu");
+       let modif = prompt("𝔐𝔬𝔡𝔦𝔣𝔦𝔢 𝔩𝔢 𝔠𝔬𝔫𝔱𝔢𝔫𝔲");
        let newLi = e.target.parentElement.firstElementChild;
        console.log(newLi);
         newLi.innerText = modif;
 
     }
 })
+
 
 //TODO done
 let todo;
@@ -170,15 +171,22 @@ document.body.append(div3btn)
 
 let btnAll = document.createElement("button");
 btnAll.innerText ="All";
+btnAll.setAttribute("class","button1")
 div3btn.appendChild(btnAll)
 
 
 let btnDone = document.createElement("button");
 btnDone.innerText ="Done";
+btnDone.setAttribute("class","button1")
+
 div3btn.appendChild(btnDone)
 
 let btnToDo = document.createElement("button");
 btnToDo.innerText ="To Do";
+btnToDo.setAttribute("class","button1")
+
+btnAll.setAttribute("class","button1")
+
 div3btn.appendChild(btnToDo)
 
 // fonction à faire TO DO
@@ -229,8 +237,8 @@ btnDone.addEventListener("click", () =>{
 
 let btnClear = document.createElement("button");
 btnClear.innerText = "Clear";
-btnClear.setAttribute("class","clear1");
-document.body.appendChild(btnClear);
+btnClear.setAttribute("class","button1");
+div3btn.appendChild(btnClear);
 console.log(btnClear);
 
 btnClear.addEventListener("click", () =>{
@@ -238,12 +246,18 @@ btnClear.addEventListener("click", () =>{
     tabComplete.forEach(element => {
         element.remove();
     });
+    
+    
 
     let tabtoDo = Array.from(document.getElementsByClassName("todo"));
     tabtoDo.forEach(element => {
         element.remove();
         
+        
     });
+
+    alert("𝔒𝔶𝔢𝔷 𝔤𝔢𝔫𝔱𝔢 𝔡𝔞𝔪𝔬𝔦𝔰𝔢𝔩𝔩𝔢, 𝔤𝔢𝔫𝔱𝔢 𝔡𝔞𝔪𝔬𝔦𝔰𝔢𝔞𝔲𝔵. 𝔙𝔬𝔲𝔰 𝔞𝔳𝔢𝔷 𝔞𝔠𝔠𝔬𝔪𝔭𝔩𝔦𝔢 𝔱𝔬𝔲𝔱𝔢 𝔳𝔬𝔰 𝔮𝔲ê𝔱𝔢𝔰 𝔞𝔳𝔢𝔠 𝔭𝔯𝔢𝔰𝔱𝔦𝔤𝔢. 𝔍𝔢 𝔳𝔬𝔲𝔰 𝔞𝔠𝔠𝔬𝔯𝔡𝔢 𝔪𝔞 𝔟é𝔫é𝔡𝔦𝔠𝔱𝔦𝔬𝔫 𝔭𝔬𝔲𝔯 𝔯𝔢𝔱𝔬𝔲𝔯𝔫𝔢𝔯 𝔳𝔞𝔮𝔲𝔢𝔯 à 𝔳𝔬𝔰 𝔬𝔠𝔠𝔲𝔭𝔞𝔱𝔦𝔬𝔫𝔰")
+    
 });
 
 
