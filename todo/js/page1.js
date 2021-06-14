@@ -54,9 +54,16 @@ toDoButton.addEventListener("click", (e) =>{
     let trashButton = document.createElement("button");
     trashButton.innerText = `D`;
     trashButton.classList.add("trash-btn");
-    todoDiv.appendChild(trashButton)
+    todoDiv.appendChild(trashButton);
     // Pour clear la valeur de l'input 
-    toDoInput.value = ""
+    toDoInput.value = "";
+    // rename Button
+    let renameButton = document.createElement("button");
+    renameButton.innerText = `R`;
+    renameButton.classList.add("rename-btn");
+    todoDiv.appendChild(renameButton)
+
+
 
 })
 // Meme code pour la touche "enter"
@@ -86,7 +93,12 @@ document.body.addEventListener("keyup", (event) =>{
     trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton)
     // Pour clear la valeur de l'input 
-    toDoInput.value = ""
+    toDoInput.value = "";
+    // rename boutton
+    let renameButton = document.createElement("button");
+    renameButton.innerText = `R`;
+    renameButton.classList.add("rename-btn");
+    todoDiv.appendChild(renameButton)
 
   }
 }, false);
@@ -110,6 +122,24 @@ document.body.addEventListener("click",(e) =>{
     }
 })
     
+// rename fonction 
+
+let todoDiv =document.getElementsByTagName("div")[1];
+console.log(todoDiv);
+
+
+
+document.body.addEventListener("click", (e)=>{
+    console.log(e.target);
+    if(e.target.innerText === "R"){
+
+       let modif = prompt("Modifie le contenu");
+       let newLi = document.getElementsByClassName("todo-item")[0]
+       console.log(newLi);
+        newLi.innerText = modif;
+
+    }
+})
 
 //TODO done
 
@@ -156,3 +186,62 @@ console.log(select);
 console.log(divSelect);
 
 document.body.appendChild(divSelect)
+
+// fonction du select
+
+let filterOption = document.querySelector(".filter-todo")
+
+console.log(filterOption);
+
+
+// filterOption.addEventListener("click",(e) =>{
+//     console.log(e.target.value);
+//     if (e.target.value =="all"){
+//         let todos = todoList.childNodes;
+
+//         todos.style.display= 'flex'
+//     }else if (e.target.value =="completed"){
+//         // alert("sgggg");
+
+//         filterOption.value == "completed";
+//     }
+
+    
+// })
+
+console.log(toDoList);
+
+filterOption.addEventListener("click", filterTodo)
+
+
+function filterTodo(e) {
+    let todos = toDoList.childNodes;
+    console.log(todos);
+    todos.forEach(function(todo){
+        switch(e.target.value){
+            case "all":
+                todo.style.display ="flex";
+                break;
+            case "completed":
+                if(todo.classList.contains("completed")){
+                    todo.style.display ="flex";
+                }else{
+                    todo.style.display = "none";
+                }    
+        }
+    })
+}
+
+
+
+// document.body.addEventListener("click",(e) =>{
+
+//     let item = e.target;
+//     if(item.classList[0] === "complete-btn"){
+//         let todo = item.parentElement;
+//         console.log(todo);
+//         todo.classList.toggle("completed")
+        
+//     }
+// })
+    

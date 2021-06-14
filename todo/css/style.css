@@ -91,6 +91,16 @@ body{
     cursor: pointer;
 }
 
+.rename-btn{
+    font-family: Mate SC;
+    font-weight: bolder;
+    border: black solid 1px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+}
+
 .fa-trash, .fa-check{
     pointer-events: none;
 }
@@ -111,13 +121,13 @@ select{
     margin-top: 20px;
     font-family: Mate SC;
     cursor: pointer;
+    color: black;
+    background-color: rgb(221, 205, 176);
+    
+    
 
 }
 
-.select::after{
-    content: "\25BC";
-    position:absolute;
-    background-color: orange;
-    top: 0;
-    right: 0%;
+select:hover{
+    background-color: rgb(207, 172, 172);
 }
