@@ -134,7 +134,7 @@ document.body.addEventListener("click", (e)=>{
     if(e.target.innerText === "R"){
 
        let modif = prompt("Modifie le contenu");
-       let newLi = document.getElementsByClassName("todo-item")[0]
+       let newLi = e.target.parentElement.firstElementChild;
        console.log(newLi);
         newLi.innerText = modif;
 
@@ -194,20 +194,20 @@ let filterOption = document.querySelector(".filter-todo")
 console.log(filterOption);
 
 
-// filterOption.addEventListener("click",(e) =>{
-//     console.log(e.target.value);
-//     if (e.target.value =="all"){
-//         let todos = todoList.childNodes;
+filterOption.addEventListener("click",(e) =>{
+    console.log(e.target.value);
+    if (e.target.value =="all"){
+        let todos = todoList.childNodes;
 
-//         todos.style.display= 'flex'
-//     }else if (e.target.value =="completed"){
-//         // alert("sgggg");
+        todos.style.display= 'flex'
+    }else if (e.target.value =="completed"){
+        // alert("sgggg");
 
-//         filterOption.value == "completed";
-//     }
+        filterOption.value == "completed";
+    }
 
     
-// })
+})
 
 console.log(toDoList);
 
