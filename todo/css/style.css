@@ -7,4 +7,18 @@ body{
     background-color: mediumpurple;
     font-family: Mate SC;
     min-height: 100vh;
+    text-align: center;
+    margin-top: 5%;
 }
+
+.todo-input{
+    font-family: Mate SC;
+    font-weight: bolder;
+}
+.todo-button{
+    margin-top: 2%;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+

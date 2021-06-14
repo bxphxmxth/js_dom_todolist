@@ -21,3 +21,11 @@ let todoList = document.createElement("ul");
 todoList.setAttribute("class","todo-list");
 todoContainer.appendChild(todoList);
 console.log(todoList);
+
+//selectors
+
+let toDoInput = document.querySelector(".todo-input");
+let toDoButton = document.querySelector(".todo-button");
+let toDoList = document.querySelector(".todo-list");
+
+
