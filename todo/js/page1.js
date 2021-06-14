@@ -47,9 +47,17 @@ toDoButton.addEventListener("click", (e) =>{
     console.log(newTodo);
     //Check bouton
     let completedButton = document.createElement("button");
-    completedButton.innerHtml = `<i class="fas fa-check"></i>`;
+    completedButton.innerText = "V";
     completedButton.classList.add("complete-btn");
     todoDiv.appendChild(completedButton)
+    // Delete bouton
+    let trashButton = document.createElement("button");
+    trashButton.innerText = `D`;
+    trashButton.classList.add("trash-btn");
+    todoDiv.appendChild(trashButton)
+    // Pour clear la valeur de l'input 
+    toDoInput.value = ""
+
 
     
     
