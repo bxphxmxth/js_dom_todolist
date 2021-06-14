@@ -125,7 +125,7 @@ document.body.addEventListener("click",(e) =>{
 // rename fonction 
 
 let todoDiv =document.getElementsByTagName("div")[1];
-console.log(todoDiv);
+// console.log(todoDiv);
 
 
 
@@ -150,87 +150,135 @@ document.body.addEventListener("click",(e) =>{
         let todo = item.parentElement;
         console.log(todo);
         todo.classList.toggle("completed")
+
         
     }
 })
     
 
 
+// creation 3 btn 
+
+let div3btn = document.createElement("div");
+div3btn.setAttribute("class","div3btn");
+document.body.append(div3btn)
+
+
+let btnAll = document.createElement("button");
+btnAll.innerText ="All";
+div3btn.appendChild(btnAll)
+
+let btnDone = document.createElement("button");
+btnDone.innerText ="Done";
+div3btn.appendChild(btnDone)
+
+let btnToDo = document.createElement("button");
+btnToDo.innerText ="To Do";
+div3btn.appendChild(btnToDo)
+
+
+let tabComplete;
+
+ btnAll.addEventListener("click", () =>{
+        tabComplete = Array.from(document.getElementsByClassName("completed"));
+        
+        
+ })
+
+
+
+
 // Creation select 
-let divSelect = document.createElement("div");
-let select = document.createElement("select");
-select.setAttribute("name","todos");
-select.setAttribute("class", "filter-todo")
-console.log(select);
-//all
-let option1 = document.createElement("option");
-option1.setAttribute('value',"all")
-option1.innerText ="All";
-//Commplet
-let option2 = document.createElement("option");
-option2.setAttribute('value',"completed")
-option2.innerText ="Completed";
-//uncompleted
-let option3 = document.createElement("option");
-option3.setAttribute('value',"uncompleted")
-option3.innerText ="Uncompleted";
+
+
+// let divSelect = document.createElement("div");
+// let select = document.createElement("select");
+// select.setAttribute("name","todos");
+// select.setAttribute("class", "filter-todo")
+// console.log(select);
+// //all
+// let option1 = document.createElement("option");
+// option1.setAttribute('value',"all")
+// option1.innerText ="All";
+// //Commplet
+// let option2 = document.createElement("option");
+// option2.setAttribute('value',"completed")
+// option2.innerText ="Completed";
+// //uncompleted
+// let option3 = document.createElement("option");
+// option3.setAttribute('value',"uncompleted")
+// option3.innerText ="Uncompleted";
 
 
 
 
-divSelect.appendChild(select);
-select.appendChild(option1);
-select.appendChild(option2);
-select.appendChild(option3);
-console.log(select);
-console.log(divSelect);
+// divSelect.appendChild(select);
+// select.appendChild(option1);
+// select.appendChild(option2);
+// select.appendChild(option3);
+// console.log(select);
+// console.log(divSelect);
 
-document.body.appendChild(divSelect)
+// document.body.appendChild(divSelect)
+
+
+// btn clear
+
+// let btnClear = document.createElement("button");
+
+
+// let renameButton = document.createElement("button");
+//     renameButton.innerText = `R`;
+//     renameButton.classList.add("rename-btn");
+//     todoDiv.appendChild(renameButton)
+
+
+
 
 // fonction du select
 
-let filterOption = document.querySelector(".filter-todo")
+// let filterOption = document.querySelector(".filter-todo")
 
-console.log(filterOption);
+// console.log(filterOption);
 
 
-filterOption.addEventListener("click",(e) =>{
-    console.log(e.target.value);
-    if (e.target.value =="all"){
-        let todos = todoList.childNodes;
+// filterOption.addEventListener("click",(e) =>{
+//     console.log(e.target.value);
+//     if (e.target.value =="all"){
+//         let todos = todoList.childNodes;
 
-        todos.style.display= 'flex'
-    }else if (e.target.value =="completed"){
-        // alert("sgggg");
+//         todos.style.display= 'flex'
+//     }else if (e.target.value =="completed"){
+//         // alert("sgggg");
 
-        filterOption.value == "completed";
-    }
+//         filterOption.value == "completed";
+//     }
 
     
-})
+// })
 
-console.log(toDoList);
+// console.log(toDoList);
 
-filterOption.addEventListener("click", filterTodo)
+// filterOption.addEventListener("click", filterTodo)
 
 
-function filterTodo(e) {
-    let todos = toDoList.childNodes;
-    console.log(todos);
-    todos.forEach(function(todo){
-        switch(e.target.value){
-            case "all":
-                todo.style.display ="flex";
-                break;
-            case "completed":
-                if(todo.classList.contains("completed")){
-                    todo.style.display ="flex";
-                }else{
-                    todo.style.display = "none";
-                }    
-        }
-    })
-}
+// function filterTodo(e) {
+//     let todos = toDoList.childNodes;
+//     console.log(todos);
+//     todos.forEach(function(todo){
+//         switch(e.target.value){
+//             case "all":
+//                 todo.style.display ="flex";
+//                 break;
+//             case "completed":
+//                 if(todo.classList.contains("completed")){
+//                     todo.style.display ="flex";
+//                 }else{
+//                     todo.style.display = "none";
+//                 }    
+//         }
+//     })
+// }
 
 
 

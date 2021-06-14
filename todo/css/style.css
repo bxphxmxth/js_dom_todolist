@@ -131,3 +131,12 @@ select{
 select:hover{
     background-color: rgb(207, 172, 172);
 }
+
+.div3btn{
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+    justify-content: space-between;
+    
+
