@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: mediumpurple;
+    font-family: Mate SC;
+    min-height: 100vh;
+}
